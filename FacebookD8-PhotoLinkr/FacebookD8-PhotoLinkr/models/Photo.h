@@ -13,8 +13,12 @@
 @property (strong, nonatomic) NSData *photoData; //Binary photo data
 @property (readonly, nonatomic) NSDate *dateAdded; //Date that the photo was submitted to iCloud
 @property (strong, nonatomic) NSString *username; //The username that submitted the photo to iCloud
-@property (readonly) UIImage *image;
+@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, readonly) NSURL *url;
 
-- (instancetype)initWithImage:(UIImage *)image username:(NSString *)username;
+
+- (instancetype)initWithImage:(UIImage *)image
+                     imageURL:(NSURL *)url
+                     username:(NSString *)username;
 
 @end

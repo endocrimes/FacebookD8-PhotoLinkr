@@ -45,10 +45,23 @@
 
 #pragma mark - Public Methods -
 
-- (void)submitPhoto:(NSData *)photoData
+- (void)submitPhoto:(Photo *)photo
      withCompletion:(void(^)(NSError *error))completion
 {
+    CKRecord *record = [[CKRecord alloc] initWithRecordType:@"PhotoLinkr"];
+//    CKAsset *asset = [[CKAsset alloc] initWithFileURL:photo.url];
+//    record[@"Photo"] = asset;
+    NSDate *submitDate = [NSDate date];
+    record[@"dateAdded"] = submitDate;
     
+    [_cloudKitPublicDatabase saveRecord:record
+                      completionHandler:^(CKRecord *record, NSError *error)
+    {
+        if ( completion )
+        {
+            completion(error);
+        }
+    }];
 }
 
 - (void)postComment:(NSString *)comment
@@ -67,8 +80,12 @@
 - (void)fetchPhotosWithCompletion:(void(^)(NSArray *comments ,NSError *error))completion
 {
     NSPredicate* predicate = [NSPredicate predicateWithFormat:@"YES"];
-    CKQuery* queryPhotos = [[CKQuery alloc] initWithRecordType:@"Photo" predicate:predicate];
-    NSSortDescriptor* timeSortOrder = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    
+    CKQuery* queryPhotos = [[CKQuery alloc] initWithRecordType:@"Photo"
+                                                     predicate:predicate];
+    
+    NSSortDescriptor* timeSortOrder = [NSSortDescriptor sortDescriptorWithKey:@"dateAdded"
+                                                                    ascending:NO];
     queryPhotos.sortDescriptors = @[ timeSortOrder ];
     
     CKQueryOperation* queryOperation = [[CKQueryOperation alloc] initWithQuery:queryPhotos];
@@ -91,8 +108,11 @@
     
 - (Photo *)photoFromRecord:(CKRecord *)record
 {
-    return [[Photo alloc] initWithImage:[UIImage imageNamed:@""]
-                               username:[[[record objectForKey:@"Photo"] fileURL] absoluteString]];
+    CKAsset *asset = [record objectForKey:@"Photo"];
+    
+    return [[Photo alloc] initWithImage:nil
+                               imageURL:asset.fileURL
+                               username:@""];
 }
 
         

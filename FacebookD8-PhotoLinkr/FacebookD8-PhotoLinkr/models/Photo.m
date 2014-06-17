@@ -16,11 +16,15 @@
 
 @implementation Photo
 
-- (instancetype)initWithImage:(UIImage *)image username:(NSString *)username
+- (instancetype)initWithImage:(UIImage *)image
+                     imageURL:(NSURL *)url
+                     username:(NSString *)username
 {
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _dateAdded = [NSDate date];
+        _url = url;
         _username = username;
         _photoData = UIImageJPEGRepresentation(image, 0.8);
     }

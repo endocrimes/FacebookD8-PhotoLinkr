@@ -109,8 +109,15 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    Photo *photo = [[Photo alloc] initWithImage:image username:@"test_user"];
-    [[CloudDatabaseManager sharedInstance] submitPhoto:photo withCompletion:nil];
+    
+    Photo *photo = [[Photo alloc] initWithImage:image
+                                       imageURL:nil
+                                       username:@"test_user"];
+    
+    [[CloudDatabaseManager sharedInstance] submitPhoto:photo withCompletion:^(NSError *error)
+    {
+        NSLog(@"HEY %@",error);
+    }];
     [self.navigationController dismissViewControllerAnimated:YES
                                                   completion:nil];
 }
