@@ -7,6 +7,8 @@
 //
 
 #import "CloudDatabaseManager.h"
+#import "Photo.h"
+#import "Comment.h"
 
 @implementation CloudDatabaseManager
 
@@ -17,6 +19,30 @@
     
     dispatch_once( &predicate, ^{ theSharedInstance = [[CloudDatabaseManager alloc] init]; } );
     return theSharedInstance;
+}
+
+- (void)submitPhoto:(NSData *)photoData
+     withCompletion:(void(^)(NSError *error))completion
+{
+    
+}
+
+- (void)postComment:(NSString *)comment
+           forPhoto:(Photo *)photo
+     withCompletion:(void(^)(NSError *error))completion
+{
+    
+}
+
+- (void)fetchCommentsForPhoto:(Photo *)photo
+               withCompletion:(void(^)(NSArray *comments ,NSError *error))completion
+{
+    
+}
+
+- (void)fetchPhotosWithCompletion:(void(^)(NSArray *comments ,NSError *error))completion
+{
+    
 }
 
 @end
