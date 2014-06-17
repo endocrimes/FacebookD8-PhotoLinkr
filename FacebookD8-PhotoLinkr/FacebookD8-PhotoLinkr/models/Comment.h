@@ -10,4 +10,7 @@
 
 @interface Comment : NSObject
 
+@property (strong, nonatomic) NSString *body; //The body of the comment
+@property (strong, nonatomic) NSString *username; //The username that submitted the comment to iCloud
+
 @end
