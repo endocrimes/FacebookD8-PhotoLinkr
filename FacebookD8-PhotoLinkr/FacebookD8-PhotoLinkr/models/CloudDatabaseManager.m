@@ -74,27 +74,25 @@
     CKQueryOperation* queryOperation = [[CKQueryOperation alloc] initWithQuery:queryPhotos];
     queryOperation.database = _cloudKitPublicDatabase;
     __block NSMutableArray* returnResults = [[NSMutableArray alloc] init];
+    
     queryOperation.recordFetchedBlock = ^(CKRecord* record)
     {
-        [returnResults addObject:record];
+        [returnResults addObject:[self photoFromRecord:record]];
     };
+    
     queryOperation.queryCompletionBlock = ^(CKQueryCursor* cursor, NSError* error)
     {
         if (!error && returnResults.count > 0)
         {
-            dispatch_sync(dispatch_get_main_queue(), ^
-            {
-//                              [self.objects removeAllObjects];
-//                              [self.objects addObjectsFromArray:returnResults];
-//                              [self.tableView reloadData];
-            });
+            completion( returnResults, error);
         }
     };
 }
     
 - (Photo *)photoFromRecord:(CKRecord *)record
 {
-    return [[Photo alloc] init];
+    return [[Photo alloc] initWithImage:[UIImage imageNamed:@""]
+                               username:[[[record objectForKey:@"Photo"] fileURL] absoluteString]];
 }
 
         
