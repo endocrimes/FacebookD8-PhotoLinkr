@@ -14,6 +14,9 @@
 		2CB69AD31950CBE900E5CECB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB69AD11950CBE900E5CECB /* Main.storyboard */; };
 		2CB69AD51950CBE900E5CECB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB69AD41950CBE900E5CECB /* Images.xcassets */; };
 		2CB69AE11950CBE900E5CECB /* FacebookD8_PhotoLinkrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AE01950CBE900E5CECB /* FacebookD8_PhotoLinkrTests.m */; };
+		2CB69AED1950CD9900E5CECB /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEC1950CD9900E5CECB /* Photo.m */; };
+		2CB69AF01950CDAB00E5CECB /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEF1950CDAB00E5CECB /* Comment.m */; };
+		2CB69AF31950CE0400E5CECB /* CloudDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,12 @@
 		2CB69ADA1950CBE900E5CECB /* FacebookD8-PhotoLinkrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FacebookD8-PhotoLinkrTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB69ADF1950CBE900E5CECB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CB69AE01950CBE900E5CECB /* FacebookD8_PhotoLinkrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacebookD8_PhotoLinkrTests.m; sourceTree = "<group>"; };
+		2CB69AEB1950CD9900E5CECB /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		2CB69AEC1950CD9900E5CECB /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		2CB69AEE1950CDAB00E5CECB /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		2CB69AEF1950CDAB00E5CECB /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		2CB69AF11950CE0400E5CECB /* CloudDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudDatabaseManager.h; sourceTree = "<group>"; };
+		2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudDatabaseManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,12 @@
 		2CB69AEA1950CCAA00E5CECB /* models */ = {
 			isa = PBXGroup;
 			children = (
+				2CB69AEB1950CD9900E5CECB /* Photo.h */,
+				2CB69AEC1950CD9900E5CECB /* Photo.m */,
+				2CB69AEE1950CDAB00E5CECB /* Comment.h */,
+				2CB69AEF1950CDAB00E5CECB /* Comment.m */,
+				2CB69AF11950CE0400E5CECB /* CloudDatabaseManager.h */,
+				2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -229,8 +244,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB69ACA1950CBE900E5CECB /* AppDelegate.m in Sources */,
+				2CB69AF01950CDAB00E5CECB /* Comment.m in Sources */,
+				2CB69AF31950CE0400E5CECB /* CloudDatabaseManager.m in Sources */,
 				2CB69ACD1950CBE900E5CECB /* MasterViewController.m in Sources */,
 				2CB69AC71950CBE900E5CECB /* main.m in Sources */,
+				2CB69AED1950CD9900E5CECB /* Photo.m in Sources */,
 				2CB69AD01950CBE900E5CECB /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
