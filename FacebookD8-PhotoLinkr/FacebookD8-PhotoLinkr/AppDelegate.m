@@ -18,15 +18,7 @@
             
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    CKContainer* container = [CKContainer defaultContainer];
-    self.database = [container publicCloudDatabase];
-    
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    MasterViewController* master = (MasterViewController*)navigationController.topViewController;
-    master.database = self.database;
-    
+    // Override point for customization after application launch
     return YES;
 }
 

@@ -8,9 +8,12 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "CloudDatabaseManager.h"
 
 @interface MasterViewController ()
-            
+{
+    CloudDatabaseManager *_cloudManager;
+}
 @property NSMutableArray *objects;
 
 @end
@@ -23,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _cloudManager = [CloudDatabaseManager sharedInstance];
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
