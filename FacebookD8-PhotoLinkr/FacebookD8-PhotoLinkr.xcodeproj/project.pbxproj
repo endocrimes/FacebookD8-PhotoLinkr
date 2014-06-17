@@ -17,6 +17,7 @@
 		2CB69AED1950CD9900E5CECB /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEC1950CD9900E5CECB /* Photo.m */; };
 		2CB69AF01950CDAB00E5CECB /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEF1950CDAB00E5CECB /* Comment.m */; };
 		2CB69AF31950CE0400E5CECB /* CloudDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */; };
+		2CB69AF51950D0A000E5CECB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB69AF41950D0A000E5CECB /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		2CB69AEF1950CDAB00E5CECB /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		2CB69AF11950CE0400E5CECB /* CloudDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudDatabaseManager.h; sourceTree = "<group>"; };
 		2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudDatabaseManager.m; sourceTree = "<group>"; };
+		2CB69AF41950D0A000E5CECB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CB69AF51950D0A000E5CECB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +76,7 @@
 		2CB69AB81950CBE900E5CECB = {
 			isa = PBXGroup;
 			children = (
+				2CB69AF41950D0A000E5CECB /* CloudKit.framework */,
 				2CB69AC31950CBE900E5CECB /* FacebookD8-PhotoLinkr */,
 				2CB69ADD1950CBE900E5CECB /* FacebookD8-PhotoLinkrTests */,
 				2CB69AC21950CBE900E5CECB /* Products */,

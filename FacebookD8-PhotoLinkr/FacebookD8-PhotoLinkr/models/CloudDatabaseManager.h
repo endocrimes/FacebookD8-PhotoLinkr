@@ -14,7 +14,7 @@
 
 + (CloudDatabaseManager *)sharedInstance;
 
-- (void)submitPhoto:(NSData *)photoData
+- (void)submitPhoto:(Photo *)photo
      withCompletion:(void(^)(NSError *error))completion;
 
 - (void)postComment:(NSString *)comment

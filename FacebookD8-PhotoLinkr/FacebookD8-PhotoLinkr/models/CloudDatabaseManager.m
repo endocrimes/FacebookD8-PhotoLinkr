@@ -10,6 +10,12 @@
 #import "Photo.h"
 #import "Comment.h"
 
+@interface CloudDatabaseManager ()
+{
+    
+}
+@end
+
 @implementation CloudDatabaseManager
 
 + (CloudDatabaseManager *)sharedInstance
