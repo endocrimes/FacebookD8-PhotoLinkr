@@ -94,7 +94,7 @@
     
 - (Photo *)photoFromRecord:(CKRecord *)record
 {
-    
+    return [[Photo alloc] init];
 }
 
         
