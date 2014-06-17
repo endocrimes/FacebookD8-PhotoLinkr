@@ -50,27 +50,11 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)refreshObjects {
-    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"YES"];
-    CKQuery* queryPhotos = [[CKQuery alloc] initWithRecordType:@"Photo" predicate:predicate];
-    NSSortDescriptor* timeSortOrder = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
-    queryPhotos.sortDescriptors = @[ timeSortOrder ];
-    
-    CKQueryOperation* queryOperation = [[CKQueryOperation alloc] initWithQuery:queryPhotos];
-    __block NSMutableArray* returnResults = [[NSMutableArray alloc] init];
-    queryOperation.recordFetchedBlock = ^(CKRecord* record) {
-        [returnResults addObject:record];
-    };
-    queryOperation.queryCompletionBlock = ^(CKQueryCursor* cursor, NSError* error) {
-        if (!error && returnResults.count > 0) {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [self.objects removeAllObjects];
-                [self.objects addObjectsFromArray:returnResults];
-                [self.tableView reloadData];
-            });
-        }
-    };
-    
+- (void)refreshObjects
+{
+//    [self.objects removeAllObjects];
+//    [self.objects addObjectsFromArray:returnResults];
+//    [self.tableView reloadData];
 }
 
 #pragma mark - Segues

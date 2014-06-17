@@ -66,7 +66,37 @@
 
 - (void)fetchPhotosWithCompletion:(void(^)(NSArray *comments ,NSError *error))completion
 {
+    NSPredicate* predicate = [NSPredicate predicateWithFormat:@"YES"];
+    CKQuery* queryPhotos = [[CKQuery alloc] initWithRecordType:@"Photo" predicate:predicate];
+    NSSortDescriptor* timeSortOrder = [NSSortDescriptor sortDescriptorWithKey:@"timestamp" ascending:NO];
+    queryPhotos.sortDescriptors = @[ timeSortOrder ];
+    
+    CKQueryOperation* queryOperation = [[CKQueryOperation alloc] initWithQuery:queryPhotos];
+    queryOperation.database = _cloudKitPublicDatabase;
+    __block NSMutableArray* returnResults = [[NSMutableArray alloc] init];
+    queryOperation.recordFetchedBlock = ^(CKRecord* record)
+    {
+        [returnResults addObject:record];
+    };
+    queryOperation.queryCompletionBlock = ^(CKQueryCursor* cursor, NSError* error)
+    {
+        if (!error && returnResults.count > 0)
+        {
+            dispatch_sync(dispatch_get_main_queue(), ^
+                          {
+//                              [self.objects removeAllObjects];
+//                              [self.objects addObjectsFromArray:returnResults];
+//                              [self.tableView reloadData];
+                          });
+        }
+    };
+}
+    
+- (Photo *)photoFromRecord:(CKRecord *)record
+{
     
 }
+
+        
 
 @end
