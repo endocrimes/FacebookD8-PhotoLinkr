@@ -83,11 +83,11 @@
         if (!error && returnResults.count > 0)
         {
             dispatch_sync(dispatch_get_main_queue(), ^
-                          {
+            {
 //                              [self.objects removeAllObjects];
 //                              [self.objects addObjectsFromArray:returnResults];
 //                              [self.tableView reloadData];
-                          });
+            });
         }
     };
 }
