@@ -111,6 +111,8 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     Photo *photo = [[Photo alloc] initWithImage:image username:@"test_user"];
     [[CloudDatabaseManager sharedInstance] submitPhoto:photo withCompletion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES
+                                                  completion:nil];
 }
 
 @end
