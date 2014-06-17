@@ -9,10 +9,11 @@
 #import "CloudDatabaseManager.h"
 #import "Photo.h"
 #import "Comment.h"
+#import <CloudKit/CloudKit.h>
 
 @interface CloudDatabaseManager ()
 {
-    
+    CKDatabase *_cloudKitPublicDatabase;
 }
 @end
 
@@ -26,6 +27,23 @@
     dispatch_once( &predicate, ^{ theSharedInstance = [[CloudDatabaseManager alloc] init]; } );
     return theSharedInstance;
 }
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        [self setupCloudKit];
+    }
+    return self;
+}
+
+- (void)setupCloudKit
+{
+    _cloudKitPublicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
+}
+
+#pragma mark - Public Methods -
 
 - (void)submitPhoto:(NSData *)photoData
      withCompletion:(void(^)(NSError *error))completion
