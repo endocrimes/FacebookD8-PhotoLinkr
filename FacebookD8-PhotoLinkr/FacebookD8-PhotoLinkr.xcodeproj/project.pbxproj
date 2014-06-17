@@ -82,6 +82,7 @@
 		2CB69AC31950CBE900E5CECB /* FacebookD8-PhotoLinkr */ = {
 			isa = PBXGroup;
 			children = (
+				2CB69AEA1950CCAA00E5CECB /* models */,
 				2CB69AC81950CBE900E5CECB /* AppDelegate.h */,
 				2CB69AC91950CBE900E5CECB /* AppDelegate.m */,
 				2CB69ACB1950CBE900E5CECB /* MasterViewController.h */,
@@ -119,6 +120,13 @@
 				2CB69ADF1950CBE900E5CECB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2CB69AEA1950CCAA00E5CECB /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
