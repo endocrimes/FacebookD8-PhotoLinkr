@@ -17,7 +17,7 @@
 		2CB69AED1950CD9900E5CECB /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEC1950CD9900E5CECB /* Photo.m */; };
 		2CB69AF01950CDAB00E5CECB /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AEF1950CDAB00E5CECB /* Comment.m */; };
 		2CB69AF31950CE0400E5CECB /* CloudDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */; };
-		2CB69AF51950D0A000E5CECB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB69AF41950D0A000E5CECB /* CloudKit.framework */; };
+		2CB69AF81950D2CA00E5CECB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CB69AF71950D2CA00E5CECB /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +51,8 @@
 		2CB69AEF1950CDAB00E5CECB /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		2CB69AF11950CE0400E5CECB /* CloudDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudDatabaseManager.h; sourceTree = "<group>"; };
 		2CB69AF21950CE0400E5CECB /* CloudDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudDatabaseManager.m; sourceTree = "<group>"; };
-		2CB69AF41950D0A000E5CECB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		2CB69AF61950D29800E5CECB /* FacebookD8-PhotoLinkr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "FacebookD8-PhotoLinkr.entitlements"; sourceTree = "<group>"; };
+		2CB69AF71950D2CA00E5CECB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CB69AF51950D0A000E5CECB /* CloudKit.framework in Frameworks */,
+				2CB69AF81950D2CA00E5CECB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +77,7 @@
 		2CB69AB81950CBE900E5CECB = {
 			isa = PBXGroup;
 			children = (
-				2CB69AF41950D0A000E5CECB /* CloudKit.framework */,
+				2CB69AF71950D2CA00E5CECB /* CloudKit.framework */,
 				2CB69AC31950CBE900E5CECB /* FacebookD8-PhotoLinkr */,
 				2CB69ADD1950CBE900E5CECB /* FacebookD8-PhotoLinkrTests */,
 				2CB69AC21950CBE900E5CECB /* Products */,
@@ -95,6 +96,7 @@
 		2CB69AC31950CBE900E5CECB /* FacebookD8-PhotoLinkr */ = {
 			isa = PBXGroup;
 			children = (
+				2CB69AF61950D29800E5CECB /* FacebookD8-PhotoLinkr.entitlements */,
 				2CB69AEA1950CCAA00E5CECB /* models */,
 				2CB69AC81950CBE900E5CECB /* AppDelegate.h */,
 				2CB69AC91950CBE900E5CECB /* AppDelegate.m */,
@@ -197,6 +199,7 @@
 				TargetAttributes = {
 					2CB69AC01950CBE900E5CECB = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 4D92W5M7K5;
 					};
 					2CB69AD91950CBE900E5CECB = {
 						CreatedOnToolsVersion = 6.0;
@@ -368,9 +371,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "FacebookD8-PhotoLinkr/FacebookD8-PhotoLinkr.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "FacebookD8-PhotoLinkr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -379,9 +386,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "FacebookD8-PhotoLinkr/FacebookD8-PhotoLinkr.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "FacebookD8-PhotoLinkr/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
