@@ -11,7 +11,7 @@
 @interface Photo : NSObject
 
 @property (strong, nonatomic) NSData *photoData; //Binary photo data
-@property (readonly, nonatomic) NSDate *dateAdded; //Date that the photo was added to iCloud
+@property (readonly, nonatomic) NSDate *dateAdded; //Date that the photo was submitted to iCloud
 @property (strong, nonatomic) NSString *username; //The username that submitted the photo to iCloud
 
 @end
