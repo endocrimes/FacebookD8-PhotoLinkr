@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Photo.h"
+#import "CloudDatabaseManager.h"
 
 @interface MasterViewController () <UIImagePickerControllerDelegate>
             
@@ -123,6 +124,7 @@
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     Photo *photo = [[Photo alloc] initWithImage:image username:@"test_user"];
+    [[CloudDatabaseManager sharedInstance] submitPhoto:photo withCompletion:nil];
 }
 
 @end
