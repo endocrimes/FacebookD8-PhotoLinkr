@@ -97,6 +97,9 @@
         [returnResults addObject:[self photoFromRecord:record]];
     };
     
+    // The documentation says that this block returns a "results" parameter, which would mean
+    // that we wouldn't have to accumulate the results as we go. But it doesn't. Raised
+    // Radar 17357153 about this.
     queryOperation.queryCompletionBlock = ^(CKQueryCursor* cursor, NSError* error)
     {
         if (!error && returnResults.count > 0)
